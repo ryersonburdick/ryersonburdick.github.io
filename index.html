@@ -16269,7 +16269,7 @@ Confidence:       0.76508
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Testing-on-Synthetic-Data">Testing on Synthetic Data<a class="anchor-link" href="#Testing-on-Synthetic-Data">&#182;</a></h3><p>Now we can examine the output of our model on some synthetic tweets (which we have created). This is not a rigorous testing procedure by any means, but it is interesting to see how our classifier might handle them.</p>
+<h3 id="Novel-Twitter-Data">Novel Twitter Data<a class="anchor-link" href="#Novel-Twitter-Data">&#182;</a></h3><p>Now we can examine the output of our model on some novel tweets which are unrelated to any of the previous datasets. This is not a rigorous testing procedure by any means, but it is interesting to see how our classifier might handle them.</p>
 
 </div>
 </div>
@@ -16493,7 +16493,7 @@ NFL attendance and ratings are WAY DOWN. Boring games yes, but many stay away be
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Finally, let's see how our model predicts the sentiments of these Tweets we've pulled straight from real accounts on Twitter.</p>
+<p>Finally, let's see how our model predicts the sentiments of these tweets we've pulled straight from real accounts on Twitter.</p>
 
 </div>
 </div>
@@ -16575,7 +16575,7 @@ Confidence:       0.93338
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Despite the fact that we know our model isn't 100% accurate, it actually evaluated all 5 of these Tweets correctly! Note that, with the first tweet, we purposefully inserted a relatively ambiguous example and our model was still able to classify it correctly.</p>
+<p>Despite the fact that we know our model isn't 100% accurate, it actually evaluated all 5 of these tweets correctly! Note that, with the first tweet, we purposefully inserted a relatively ambiguous example and our model was still able to classify it correctly.</p>
 
 </div>
 </div>
@@ -16686,13 +16686,26 @@ Confidence:       0.93338
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><hr>
 <p>We hope this has served as an informative introduction to the task of sentiment analysis. Much like the written language on which it is based, sentiment analysis from text is rich with nuance; this is a major reason why it is often very difficult. There are many variables that need to be addressed before beginning data analysis, and how we deal with these variables changes depending on the task. Take stopwords, for example. Our project was entirely based in "polarity", or classifying things as strictly positive or negative (polarity often includes neutral as well). In a more complicated sentiment analysis project, maybe one designed to detect emotion, the frequency of various words normally classified as stopwords may indicate a certain emotion, especially when dealing with the spoken word rather than the written word. The effect of various preprocessing steps, such as stopword removal and stemming, also depends on the neture of the specific application. For instance, you can't delete the stopwords "the" or "who" when classifying tweets about rock bands.</p>
-<p>Our classfier, as stated above, is a simple logistic regression model. Historically, this machine learning technique has performed far better than more traditional, less flexible rule-based approaches. The umbrella of machine learning approaches, however, includes many other methods. <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naïve Bayes</a>, which incorporates Bayes theorem and probabilistic classifiers, determines classification by using word frequencies and calculating probabilities of different words from training data. <a href="https://en.wikipedia.org/wiki/Support_vector_machine">Support Vector Machines</a> use distance metrics and kernel functions to determine a linear decision boundary between data points; this is often done using similar document vectors (tf-idf) to those we constructed in this tutorial.</p>
-<p>Sentiment analysis, and the field of NLP as a whole, have more recently been revolutionized by a major shift towards more complex <a href="https://en.wikipedia.org/wiki/Deep_learning">deep learning</a>-based approaches. These approaches leverage sophisticated models called neural networks and their many variants to learn complex non-linear transformations on data. Many deep learning approaches for NLP, such as sequence models (<a href="https://google.github.io/seq2seq/">seq2seq</a>) and, more recently, transformers (such as Google's <a href="https://arxiv.org/abs/1810.04805">BERT</a> and OpenAI's <a href="https://openai.com/blog/better-language-models/">GPT-2</a>), use a variety of components with millions or billions of parameters to train. Fitting models of this size requires incredibly powerful computing architecture, billions or even <em>trillions</em> of data points, sophisticated mechanisms for parallelization of training steps, and <strong>lots</strong> of time. Still other deep learning approaches focus instead on the <em>representation</em> of language data rather than the transformations which can be performed on it (although these are inextricably linked). Neural word embeddings, such as those produced by <a href="https://en.wikipedia.org/wiki/Word2vec">word2vec</a> and <a href="https://nlp.stanford.edu/projects/glove/">GloVe</a>, are more dense (lower dimensional) word vectors produced by feeding word proximity data into sopisticated deep neural networks. These embeddings encode useful word information in a representation which is more computationally favorable due to its drastically reduced size (e.g., 256 entrieds as opposed to 2,000+). The most exciting results in the field of sentiment analysis, and NLP in general, have recently been achieved through the combination of these tactics.</p>
+<p>Our classifier, as stated above, is a simple logistic regression model. Historically, this machine learning technique has performed far better than more traditional, less flexible rule-based approaches. The umbrella of machine learning approaches, however, includes many other methods. <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naïve Bayes</a>, which incorporates Bayes theorem and probabilistic classifiers, determines classification by using word frequencies and calculating probabilities of different words from training data. <a href="https://en.wikipedia.org/wiki/Support_vector_machine">Support Vector Machines</a> use distance metrics and kernel functions to determine a linear decision boundary between data points; this is often done using similar document vectors (tf-idf) to those we constructed in this tutorial.</p>
+<p>Sentiment analysis, and the field of NLP as a whole, have more recently been revolutionized by a major shift towards more complex <a href="https://en.wikipedia.org/wiki/Deep_learning">deep learning</a>-based approaches. These approaches leverage sophisticated models called neural networks and their many variants to learn complex non-linear transformations on data. Many deep learning approaches for NLP, such as sequence models (<a href="https://google.github.io/seq2seq/">seq2seq</a>) and, more recently, transformers (such as Google's <a href="https://arxiv.org/abs/1810.04805">BERT</a> and OpenAI's <a href="https://openai.com/blog/better-language-models/">GPT-2</a>), use a variety of components with millions or billions of parameters to train. Fitting models of this size requires incredibly powerful computing architecture, billions or even <em>trillions</em> of data points, sophisticated mechanisms for parallelization of training steps, and <strong>lots</strong> of time. Still other deep learning approaches focus instead on the <em>representation</em> of language data rather than the transformations which can be performed on it (although these are inextricably linked). Neural word embeddings, such as those produced by <a href="https://en.wikipedia.org/wiki/Word2vec">word2vec</a> and <a href="https://nlp.stanford.edu/projects/glove/">GloVe</a>, are more dense (lower dimensional) word vectors produced by feeding word proximity data into sopisticated deep neural networks. These embeddings encode useful word information in a representation which is more computationally favorable due to its drastically reduced size (e.g., 256 entries as opposed to 2,000+). The most exciting results in the field of sentiment analysis, and NLP in general, have recently been achieved through the combination of these tactics.</p>
 <p>Our approach, while definitely on the simpler side of models used for sentiment analysis, seems to have performed quite well. Not only was the accuracy of our model 84%, but our AUC score came out to .92, and our confusion matrix shows a high percentage of instances that were classified correctly. To achieve a <em>deployable</em> sentiment analysis model, however, there are various things we have to consider or eliminate that we have not in this project. For one, most polarity based analyses include a "Neutral" sentiment. Some even take a finer grained approach, including classfications like "Very Positive" or "Slightly Negative". The documents we used took text from two different platforms, and while our objective was not to create a model that works for any text from any source, a working general sentiment model would have to pull data from all types of platforms. It's also worth mentioning that our datasets had vastly different sizes, and it's possible that the much larger number of Amazon reviews could've heavily pushed the model in a certain direction.</p>
 <p>This tutorial gave us a peek into the exciting world of sentiment analysis. There's still so much to learn about this field, and many more complex methods of sentiment analysis can help us further understand how to deal with edge cases like double negation, sarcasm, or multilingual examples. If you are interested in learning more, we encourage you to click some of the links above, explore some online courses such as Coursera's <a href="https://www.coursera.org/learn/intro-to-deep-learning">Intro to Deep Learning</a> or see this article on <a href="https://towardsdatascience.com/how-to-get-started-in-nlp-6a62aa4eaeff">how to get started with NLP</a>.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
